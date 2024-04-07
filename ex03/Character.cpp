@@ -87,7 +87,7 @@ void Character::equip(AMateria* m)
 	for (int i = 0; i < 4; i++) {
 		if (!this->inventory[i]) { // 빈 슬롯이라면 Materia 추가
 			this->inventory[i] = m;
-			std::cout << "Materia equipped!" << std::endl;
+			std::cout << "✅ Materia equipped!" << std::endl;
 			return;
 		}
 	}
@@ -123,7 +123,7 @@ void Character::unequip(int idx) {
 
     // Materia를 장착 해제하고 슬롯을 비움
     this->inventory[idx] = NULL;
-    std::cout << "Materia unequipped from slot " << idx << "." << std::endl;
+    std::cout << "❎ Materia unequipped from slot " << idx << "." << std::endl;
 }
 
 
