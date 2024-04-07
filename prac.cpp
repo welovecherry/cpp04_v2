@@ -991,3 +991,91 @@ use(int idx, ICharacter& target): 지정된 인덱스에 있는 마법(Materia)�
 //     std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 //     // 특정 캐릭터를 대상으로 치유 마법을 사용하는 함수 구현
 // }
+
+
+// #ifndef MATERIASOURCE_HPP
+// #define MATERIASOURCE_HPP
+
+// #include "IMateriaSource.hpp"
+
+// class MateriaSource : public IMateriaSource {
+// private:
+//     AMateria* slots[4];
+
+// public:
+//     MateriaSource();
+//     MateriaSource(const MateriaSource& src);
+//     MateriaSource& operator=(const MateriaSource& rhs);
+//     virtual ~MateriaSource();
+
+//     void learnMateria(AMateria* m);
+//     AMateria* createMateria(std::string const &type);
+// };
+
+// #endif
+
+#include "MateriaSource.hpp"
+#include <iostream>
+
+MateriaSource::MateriaSource() {
+    for (int i = 0; i < 4; ++i) {
+        slots[i] = NULL;
+    }
+}
+
+MateriaSource::MateriaSource(const MateriaSource& src) {
+    *this = src;
+}
+
+// MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
+//     if (this != &rhs) {
+//         for (int i = 0; i < 4; ++i) {
+//             delete slots[i];
+//             if (rhs.slots[i]) slots[i] = rhs.slots[i]->clone();
+//             else slots[i] = NULL;
+//         }
+//     }
+//     return *this;
+// }
+MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
+    if (this != &rhs) {
+        // 1단계: 현재 객체의 모든 Materia 객체들을 삭제
+        for (int i = 0; i < 4; i++) {
+            if (slots[i]) {
+                delete slots[i];
+                slots[i] = NULL; // 삭제 후 NULL로 초기화
+            }
+        }
+
+        // 2단계: rhs의 Materia 객체들을 깊은 복사
+        for (int i = 0; i < 4; i++) {
+            if (rhs.slots[i]) slots[i] = rhs.slots[i]->clone();
+        }
+    }
+    return *this;
+}
+
+
+MateriaSource::~MateriaSource() {
+    for (int i = 0; i < 4; i++) {
+        delete slots[i];
+    }
+}
+
+void MateriaSource::learnMateria(AMateria* m) {
+    for (int i = 0; i < 4; i++) {
+        if (slots[i] == NULL) {
+            slots[i] = m;
+            break;
+        }
+    }
+}
+
+AMateria* MateriaSource::createMateria(std::string const &type) {
+    for (int i = 0; i < 4; i++) {
+        if (slots[i] && slots[i]->getType() == type) {
+            return slots[i]->clone();
+        }
+    }
+    return NULL;
+}

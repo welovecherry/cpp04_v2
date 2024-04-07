@@ -13,10 +13,27 @@
 ### 2. `createMateria(std::string const &type)`
 - 이 함수는 주어진 마법 재료의 타입(`type`)에 해당하는 마법 재료의 새로운 인스턴스를 생성하여 반환합니다.
 - `learnMateria`를 통해 학습된 마법 재료 중에서, 요청된 `type`과 일치하는 마법 재료를 찾아 그 복사본을 만들어 반환합니다.
-- 만약 요청된 `type`의 마법 재료를 학습하지 않았다면, `nullptr`을 반환합니다.
+- 만약 요청된 `type`의 마법 재료를 학습하지 않았다면, ``을 반환합니다.
 
 간단히 말해, `IMateriaSource` 인터페이스(및 이를 구현하는 `MateriaSource` 클래스)는 
 마법 재료(`AMateria`)의 "도서관"과 같은 역할을 합니다. 
 
 여러분이 마법 재료를 "체크아웃"하려 할 때, 그 마법 재료의 타입을 지정하면, 도서관은 해당 타입의 마법 재료를 복제하여 제공합니다. 
 이 시스템을 통해, 게임의 다양한 부분에서 필요한 마법 재료를 효율적으로 생성하고 사용할 수 있습니다.*/
+
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
+
+#include "AMateria.hpp"
+
+class Amateria; // 꼭 필요한가?
+
+class IMateriaSource
+{
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria *m) = 0;
+		virtual AMateria *createMateria(std::string const &type) = 0;
+};
+
+#endif
