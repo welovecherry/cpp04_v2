@@ -1,7 +1,7 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-WrongCat::WrongCat(const std::string &type) : WrongAnimal(type) {
+WrongCat::WrongCat() : WrongAnimal() {
     /* WrongAnimal 클래스로부터 상속받은 type 멤버 변수에 대한 접근이 가능하기 때문에, 
     WrongCat 클래스의 생성자 및 대입 연산자에서 
     this->type = type; 또는 this->type = rhs.type;와 같은 할당은 필요 없습니다. */

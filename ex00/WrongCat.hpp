@@ -9,7 +9,7 @@ WrongCat에서 별도로 type을 설정할 필요가 없습니다*/
 // protected:
 //     std::string type;
 public:
-    WrongCat(const std::string &type);
+    WrongCat();
     WrongCat(const WrongCat& src);
     WrongCat& operator=(const WrongCat& rhs);
     virtual ~WrongCat();

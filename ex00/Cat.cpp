@@ -6,7 +6,7 @@
  추가적으로 Cat 생성자에서 커스텀 로직(여기서는 생성자 호출 메시지를 출력)을 실행합니다. 
  이 방식은 파생 클래스가 자신의 특성을 명확하게 반영하면서도, 
  기본 클래스의 구성 요소를 적절히 활용하고 초기화하는 방법을 제공합니다.*/
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : Animal() {
     std::cout << "Cat constructor called." << std::endl;
 }
 

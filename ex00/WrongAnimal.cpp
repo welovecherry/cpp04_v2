@@ -6,8 +6,8 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(const std::string& type) {
-    this->type = type;
+WrongAnimal::WrongAnimal() {
+    this->type = "WrongAnimal";
     std::cout << "WrongAnimal constructor called." << std::endl;
 }
 
@@ -29,7 +29,7 @@ WrongAnimal::~WrongAnimal() {
 }
 
 void WrongAnimal::makeSound() const {
-    std::cout << "WrongAnimal makes a sound, but it's not a sound made by a WrongCat." << std::endl;
+    std::cout << "Wrong sound" << std::endl;
 }
 
 std::string WrongAnimal::getType() const {

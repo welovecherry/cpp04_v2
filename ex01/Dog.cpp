@@ -6,7 +6,7 @@
 이는 Dog 객체마다 독립적인 Brain 객체를 갖게 합니다.*/
 
 // 방법1: 멤버 이니셜라이저 리스트 사용
-Dog::Dog() : Animal("Dog"), brain(new Brain()) {
+Dog::Dog() : Animal(), brain(new Brain()) {
     std::cout << "Dog constructor called." << std::endl;
 }
 

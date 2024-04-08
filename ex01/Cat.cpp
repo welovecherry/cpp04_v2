@@ -8,7 +8,7 @@
  기본 클래스의 구성 요소를 적절히 활용하고 초기화하는 방법을 제공합니다.*/
  
  // 방법 1: 멤버 이니셜라이저 리스트 활용
-Cat::Cat() : Animal("Cat"), brain(new Brain()) {
+Cat::Cat() : Animal(), brain(new Brain()) {
     std::cout << "Cat constructor called." << std::endl;
 }
 

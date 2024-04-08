@@ -15,7 +15,7 @@ protected:
     std::string type;
 
 public:
-    WrongAnimal(const std::string& type);
+    WrongAnimal();
     WrongAnimal(const WrongAnimal& src);
     WrongAnimal& operator=(const WrongAnimal & rhs);
     virtual ~WrongAnimal();

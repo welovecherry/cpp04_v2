@@ -9,8 +9,7 @@ protected:
     std::string type;
 
 public:
-    // Animal();
-    Animal(const std::string &type);
+    Animal();
     Animal(const Animal& src);
     Animal& operator=(const Animal& rhs);
 
