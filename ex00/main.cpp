@@ -22,7 +22,7 @@ int main(void) {
     std::cout << std::endl;
     
     std::cout << i->getType() << " " << std::endl; 
-    std::cout << i->getType() << " " << std::endl; 
+    std::cout << j->getType() << " " << std::endl; 
     std::cout << std::endl;
     
     i->makeSound();
@@ -30,13 +30,17 @@ int main(void) {
     meta->makeSound();
 
     std::cout << "\n------ Testing WrongAnimal Class ------" << std::endl; 
-    WrongAnimal *wrongAnimal = new WrongAnimal();
-    std::cout << wrongAnimal->getType() << " " << std::endl;
+    const WrongAnimal* meta2 = new WrongAnimal();
+    std::cout << std::endl;
 
-    std::cout << "\n------ Testing WrongCat Class ------" << std::endl;
-    WrongCat *wrongCat = new WrongCat();
-    std::cout << wrongCat->getType() << " " << std::endl;
+    const WrongAnimal* k = new WrongCat();
+    std::cout << std::endl;
 
+    std::cout << k->getType() << " " << std::endl; // "WrongCat"을 출력하도록 예상됩니다.
+    std::cout << std::endl;
+
+    k->makeSound(); // "Wrong sound"을 출력합니다. WrongCat은 WrongAnimal의 makeSound()를 상속받습니다.
+    meta2->makeSound(); // "Wrong sound"을 출력합니다.
 
     std::cout << "\n------ Deleting all objects ------" << std::endl;
     delete meta;
@@ -48,53 +52,36 @@ int main(void) {
     delete j;
     std::cout << std::endl;
     
-    delete wrongAnimal;
+    delete meta2;
     std::cout << std::endl;
     
-    delete wrongCat;
+    delete k;
     std::cout << "------ End of the main statement ------" << std::endl;
     return 0;
 }
 
-//int main(void) {
+
+
+//int main() {
 //    std::cout << "------ Begin of the main statement ------\n" << std::endl;
 
-//    std::cout << "------ Testing Animal Class ------" << std::endl;
-//    Animal *genericAnimal = new Animal("General Animal");
-//    std::cout << "Animal type: " << genericAnimal->getType() << std::endl;
-//    genericAnimal->makeSound();
+//    const WrongAnimal* meta2 = new WrongAnimal();
+//    std::cout << std::endl;
 
-//    std::cout << "\n------ Testing Cat Class ------" << std::endl;
-//    Cat *cat = new Cat();
-//    std::cout << "Cat type: " << cat->getType() << std::endl;
-//    cat->makeSound();
+//    const WrongAnimal* k = new WrongCat();
+//    std::cout << std::endl;
 
-//    std::cout << "\n------ Testing Dog Class ------" << std::endl;
-//    Dog *dog = new Dog();
-//    std::cout << "Dog type: " << dog->getType() << std::endl;
-//    dog->makeSound();
+//    std::cout << k->getType() << " " << std::endl; // "WrongCat"을 출력하도록 예상됩니다.
+//    std::cout << std::endl;
 
-//    std::cout << "\n---------------------------------------" << std::endl;
-//    std::cout << "\n------ Testing WrongAnimal Class ------" << std::endl;
-//    WrongAnimal *genericWrongAnimal = new WrongAnimal("Generic WrongAnimal");
-//    std::cout << "WrongAnimal Type: " << genericWrongAnimal->getType() << std::endl;
-//    genericWrongAnimal->makeSound();
-
-//    std::cout << "\n------ Testing WrongCat Class ------" << std::endl;
-//    WrongCat *wrongCat = new WrongCat("WrongCat");
-//    std::cout << "WrongCat type: " << wrongCat->getType() << std::endl;
-//    wrongCat->makeSound();
+//    k->makeSound(); // "Wrong sound"을 출력합니다. WrongCat은 WrongAnimal의 makeSound()를 상속받습니다.
+//    meta2->makeSound(); // "Wrong sound"을 출력합니다.
 
 //    std::cout << "\n------ Deleting all objects ------" << std::endl;
-//    delete genericAnimal;
-//    std::cout << std::endl;
     
-//    delete cat;
-//    std::cout << std::endl;
-    
-//    delete dog;
-//    std::cout << std::endl;
-    
+//    delete meta2;
+//    delete k;
+
 //    std::cout << "------ End of the main statement ------" << std::endl;
-//    return (0);
+//    return 0;
 //}

@@ -7,6 +7,7 @@
  이 방식은 파생 클래스가 자신의 특성을 명확하게 반영하면서도, 
  기본 클래스의 구성 요소를 적절히 활용하고 초기화하는 방법을 제공합니다.*/
 Cat::Cat() : Animal() {
+    this->type = "Cat";
     std::cout << "Cat constructor called." << std::endl;
 }
 

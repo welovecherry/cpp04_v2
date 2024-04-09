@@ -2,6 +2,7 @@
 #include <iostream>
 
 Dog::Dog() : Animal() {
+    this->type = "Dog";
     std::cout << "Dog constructor called." << std::endl;
 }
 

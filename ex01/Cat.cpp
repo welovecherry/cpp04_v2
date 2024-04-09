@@ -9,6 +9,7 @@
  
  // 방법 1: 멤버 이니셜라이저 리스트 활용
 Cat::Cat() : Animal(), brain(new Brain()) {
+    // TODO: "cat"으로 초기화 해야할까??
     std::cout << "Cat constructor called." << std::endl;
 }
 

@@ -4,9 +4,7 @@
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
-/* 현재 구현에서는 WrongAnimal의 생성자가 이미 type을 초기화하므로, 
-WrongCat에서 별도로 type을 설정할 필요가 없습니다*/
-// protected:
+//protected:
 //     std::string type;
 public:
     WrongCat();
