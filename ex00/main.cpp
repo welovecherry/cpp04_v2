@@ -59,29 +59,3 @@ int main(void) {
     std::cout << "------ End of the main statement ------" << std::endl;
     return 0;
 }
-
-
-
-//int main() {
-//    std::cout << "------ Begin of the main statement ------\n" << std::endl;
-
-//    const WrongAnimal* meta2 = new WrongAnimal();
-//    std::cout << std::endl;
-
-//    const WrongAnimal* k = new WrongCat();
-//    std::cout << std::endl;
-
-//    std::cout << k->getType() << " " << std::endl; // "WrongCat"을 출력하도록 예상됩니다.
-//    std::cout << std::endl;
-
-//    k->makeSound(); // "Wrong sound"을 출력합니다. WrongCat은 WrongAnimal의 makeSound()를 상속받습니다.
-//    meta2->makeSound(); // "Wrong sound"을 출력합니다.
-
-//    std::cout << "\n------ Deleting all objects ------" << std::endl;
-    
-//    delete meta2;
-//    delete k;
-
-//    std::cout << "------ End of the main statement ------" << std::endl;
-//    return 0;
-//}

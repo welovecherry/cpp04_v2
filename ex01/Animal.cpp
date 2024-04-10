@@ -15,9 +15,6 @@ Animal& Animal::operator=(const Animal& rhs) {
         this->type = rhs.type;
     }
     std::cout << "Animal assignment operator called." << std::endl;
-/* 리턴의 중요성: 대입 연산자를 사용하는 코드에서 다음과 같이 연쇄 대입을 수행할 수 있게 됩니다:*/
-/* Animal animal1("Cat"), animal2("Dog"), animal3("Bird");
-animal1 = animal2 = animal3; */
     return *this;
 }
 

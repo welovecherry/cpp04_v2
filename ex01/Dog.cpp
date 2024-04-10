@@ -5,16 +5,10 @@
 : brain 멤버는 new Brain()을 사용해 동적으로 할당됩니다. 
 이는 Dog 객체마다 독립적인 Brain 객체를 갖게 합니다.*/
 
-// 방법1: 멤버 이니셜라이저 리스트 사용
+// 멤버 이니셜라이저 리스트 사용
 Dog::Dog() : Animal(), brain(new Brain()) {
-    std::cout << "Dog constructor called." << std::endl;
+    std::cout << "🐶Dog constructor called." << std::endl;
 }
-
-// 방법2: 본문에서 동적할당
-// Dog::Dog() : Animal("Dog") {
-//     brain = new Brain();
-//     std::cout << "Dog constructor called." << std::endl;
-// }
 
 
 /*  정확히 말하면, 복사 생성자도 하나의 생성자이며, 객체의 생성 과정에 관여합니다. 
@@ -33,9 +27,13 @@ Dog::Dog() : Animal(), brain(new Brain()) {
 즉, 원본 `Brain` 객체에 접근합니다.*/
 
 // 방법1: 멤버 이니셜라이저 리스트 사용
+//Dog::Dog(const Dog& src) : Animal(src), brain(new Brain(*src.brain)) {
+//    std::cout << "🐶Dog copy constructor called." << std::endl;
+//}
 Dog::Dog(const Dog& src) : Animal(src), brain(new Brain(*src.brain)) {
-    std::cout << "Dog copy constructor called." << std::endl;
+    std::cout << "🐶Dog copy constructor called." << std::endl;
 }
+
 
 // 방법2: 본문에서 동적할당
 // Dog::Dog(const Dog& src) : Animal(src) {
@@ -54,16 +52,16 @@ Brain 객체의 실제 내용을 복사하여 새로운 Brain 객체를 할당�
         delete brain; // 기존 브레인 객체 해제
         brain = new Brain(*rhs.brain); // 새 브레인 객체 할당
     }
-    std::cout << "Dog assignment operator called." << std::endl;
+    std::cout << "🐶Dog assignment operator called." << std::endl;
     return *this;
 }
 
 Dog::~Dog() {
     delete brain;
-    std::cout << "Dog destructor called." << std::endl;
+    std::cout << "🐶Dog destructor called." << std::endl;
 }
 
 // makeSound 함수 오버라이딩
 void Dog::makeSound() const {
-    std::cout << "Dog: Bow Wow" << std::endl;
+    std::cout << "🐶Dog: Bow Wow" << std::endl;
 }

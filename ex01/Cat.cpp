@@ -7,24 +7,17 @@
  이 방식은 파생 클래스가 자신의 특성을 명확하게 반영하면서도, 
  기본 클래스의 구성 요소를 적절히 활용하고 초기화하는 방법을 제공합니다.*/
  
- // 방법 1: 멤버 이니셜라이저 리스트 활용
+ // 멤버 이니셜라이저 리스트 활용
 Cat::Cat() : Animal(), brain(new Brain()) {
     // TODO: "cat"으로 초기화 해야할까??
-    std::cout << "Cat constructor called." << std::endl;
+    std::cout << "😺Cat constructor called." << std::endl;
 }
 
-// 방법 2: 본문에서 동적 할당
-// Cat::Cat() : Animal("Cat") {
-//     brain = new Brain();
-//     std::cout << "Cat constructor called." << std::endl;
-// }
-
-/* Cat 클래스의 복사 생성자는 Animal 클래스로부터 상속받은 멤버 변수를 올바르게 처리하기 위해 
-기본 클래스의 복사 생성자를 호출함 */
+/* Cat 클래스의 복사 생성자는 Animal 클래스로부터 상속받은 멤버 변수를 올바르게 처리하기 위해 기본 클래스의 복사 생성자를 호출함 */
 // 방법 1: 멤버 이니셜라이저 리스트 활용
 
 Cat::Cat(const Cat& src) : Animal(src), brain(new Brain(*src.brain)) {
-    std::cout << "Cat copy constructor called." << std::endl;
+    std::cout << "😺Cat copy constructor called." << std::endl;
 }
 
 // 방법 2: 본문에서 동적 할당
@@ -45,17 +38,17 @@ Brain 객체의 실제 내용을 복사하여 새로운 Brain 객체를 할당�
         Animal::operator=(rhs);
         delete brain;
         brain = new Brain(*rhs.brain);
-        std::cout << "Cat assignment operator called." << std::endl;
+        std::cout << "😺Cat assignment operator called." << std::endl;
     }
     return *this;
 }
 
 Cat::~Cat() {
     delete brain;
-    std::cout << "Cat destructor called." << std::endl;
+    std::cout << "😺Cat destructor called." << std::endl;
 }
 
 // makeSound 함수 오버라이딩
 void Cat::makeSound() const {
-    std::cout << "Cat: Meow Meow" << std::endl;
+    std::cout << "😺Cat: Meow Meow" << std::endl;
 }

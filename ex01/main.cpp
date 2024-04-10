@@ -23,11 +23,13 @@ int main() {
     std::cout << "------ Create all animals ------" << std::endl;
     for (int i = 0; i < size / 2; i++) {
         animals[i] = new Dog();
-        std::cout << "Dog " << i + 1 << " created.\n" << std::endl;
+        std::cout << std::endl;
+        //std::cout << "Dog " << i + 1 << " created.\n" << std::endl;
     }
     for (int i = size / 2; i < size; i++) {
         animals[i] = new Cat();
-        std::cout << "Cat " << i - (size / 2) + 1 << " created.\n" << std::endl;
+        std::cout << std::endl;
+        //std::cout << "Cat " << i - (size / 2) + 1 << " created.\n" << std::endl;
     }
     
     std::cout << "\n------ All animals make sound ------" << std::endl;
@@ -39,7 +41,7 @@ int main() {
     std::cout << "------ Delete all animals ------" << std::endl;
     for (int i = 0; i < size; i++) {
         delete animals[i];
-        std::cout << "Animal " << i + 1 << " deleted." << std::endl;
+        //std::cout << "Animal " << i + 1 << " deleted." << std::endl;
         std::cout << std::endl;
     }
 
