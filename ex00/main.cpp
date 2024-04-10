@@ -9,7 +9,12 @@
 /*Dog와 Cat 클래스는 각각 Animal 클래스로부터 상속받아 makeSound() 함수를 오버라이딩(재정의)합니다. 
 따라서, 각각의 객체는 자신에게 해당하는 소리를 출력합니다.*/
 
+// void leaks(void) {
+//     system("leaks ex00");
+// }
+
 int main(void) {
+    // atexit(leaks);
     std::cout << "------ Begin of the main statement ------\n" << std::endl;
 
     const Animal* meta = new Animal();
@@ -36,11 +41,11 @@ int main(void) {
     const WrongAnimal* k = new WrongCat();
     std::cout << std::endl;
 
-    std::cout << k->getType() << " " << std::endl; // "WrongCat"을 출력하도록 예상됩니다.
+    std::cout << k->getType() << " " << std::endl;
     std::cout << std::endl;
 
-    k->makeSound(); // "Wrong sound"을 출력합니다. WrongCat은 WrongAnimal의 makeSound()를 상속받습니다.
-    meta2->makeSound(); // "Wrong sound"을 출력합니다.
+    k->makeSound();
+    meta2->makeSound();
 
     std::cout << "\n------ Deleting all objects ------" << std::endl;
     delete meta;

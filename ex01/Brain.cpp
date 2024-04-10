@@ -25,13 +25,9 @@ Brain::~Brain() {
 }
 
 std::string Brain::getIdea(int idx) const {
-    if (idx >= 0 && idx < 100) {
         return ideas[idx];
-    } 
 }
 
 void Brain::setIdea(int idx, const std::string& idea) {
-    if (idx >= 0 && idx < 100) {
         ideas[idx] = idea;
-    }
 }
