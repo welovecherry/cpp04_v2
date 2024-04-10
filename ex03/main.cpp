@@ -4,8 +4,6 @@
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 #include <iostream>
-// #include <unistd.h>
-
 
 // void leaks(void)
 // {
@@ -18,6 +16,7 @@ int main() {
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice()); 
     std::cout << std::endl;
+
     src->learnMateria(new Cure());
     std::cout << std::endl;
 
@@ -27,7 +26,7 @@ int main() {
     me->equip(tmp);
     std::cout << std::endl;
     
-    tmp = src->createMateria("cure"); //  Returns 0 if the type is unknown.
+    tmp = src->createMateria("cure");
     me->equip(tmp);
     std::cout << std::endl;
 
@@ -40,7 +39,6 @@ int main() {
     delete bob; 
     delete me; 
     delete src;
-
     std::cout << "------ End of the main statement ------" << std::endl;
     return (0);
 }

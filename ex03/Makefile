@@ -5,7 +5,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp AMateria.cpp Character.cpp \
 	Ice.cpp Cure.cpp MateriaSource.cpp 
 OBJS = $(SRC:.cpp=.o)
-NAME = a.out
+NAME = ex03
 
 all: $(NAME)
 

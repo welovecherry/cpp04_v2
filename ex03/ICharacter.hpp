@@ -26,19 +26,11 @@ class AMateria;
 
 class ICharacter {
 public:
-    virtual ~ICharacter() {} // 가상 소멸자
+    virtual ~ICharacter() {}
 
-    // 캐릭터의 이름을 반환하는 순수 가상 함수. 모든 캐릭터는 고유한 이름을 가짐
     virtual std::string const &getName() const = 0;
-
-    // 특정 마법(Materia)을 장착하는 순수 가상 함수
-    // 캐릭터는 여러 마법을 장착할 수 있으며 이를 활용할 수 있다.
     virtual void equip(AMateria* m) = 0;
-
-    // 마법(Materia)을 장착 해제하는 순수 가상 함수
     virtual void unequip(int idx) = 0;
-
-    // 특정 대상에게 마법(Materia)을 사용하는 순수 가상 함수
     virtual void use(int idx, ICharacter& target) = 0;
 };
 #endif

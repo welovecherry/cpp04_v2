@@ -1,11 +1,11 @@
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {
-    std::cout << "💊 Cure default Constructor called." << std::endl;
+    std::cout << "💊 Cure constructor called." << std::endl;
 }
 
 Cure::Cure(Cure const &src) : AMateria(src) {
-    std::cout << "💊 Cure copy Constructor called." << std::endl;
+    std::cout << "💊 Cure copy constructor called." << std::endl;
 }
 
 Cure &Cure::operator=(Cure const &rhs) {
@@ -21,10 +21,9 @@ Cure::~Cure() {
 }
 
 Cure* Cure::clone() const {
-    return new Cure(*this);  // Cure 객체의 복사본을 생성하여 반환
+    return new Cure(*this);
 }
 
-// concrete class member function
 void Cure::use(ICharacter& target) {
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

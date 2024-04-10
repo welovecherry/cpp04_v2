@@ -2,11 +2,11 @@
 #include <iostream>
 
 Ice::Ice(): AMateria("ice") {
-    std::cout << "🧊 Ice default Constructor called." << std::endl;
+    std::cout << "🧊 Ice constructor called." << std::endl;
 }
 
 Ice::Ice(Ice const &src) : AMateria(src) {
-    std::cout << "🧊 Ice copy Constructor called." << std::endl;
+    std::cout << "🧊 Ice copy constructor called." << std::endl;
 }
 
 Ice &Ice::operator=(Ice const &rhs) {
