@@ -32,7 +32,4 @@ public:
     virtual void use(ICharacter &target); 
 };
 
-// 주의: clone()과 use() 함수는 여기에 구현되지 않습니다.
-// 이는 상속받은 구체 클래스에서 구현되어야 합니다.
-
 #endif

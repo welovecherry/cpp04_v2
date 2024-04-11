@@ -26,7 +26,7 @@
 
 #include "AMateria.hpp"
 
-class Amateria; // 꼭 필요한가?
+class Amateria;
 
 class IMateriaSource
 {

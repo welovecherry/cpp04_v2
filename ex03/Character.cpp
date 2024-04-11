@@ -30,7 +30,6 @@ before the new ones are added to their inventory."를 고려할 때,
 하지만, 이 과정은 복사 생성자보다는 (복사 할당 연산자)에서 더 중요한 의미를 갖습니다. 
 왜냐하면 복사 생성자는 객체가 새로 생성될 때 호출되므로, 대상 객체의 인벤토리가 비어 있을 것이기 때문입니다. */
 
-// 복사 생성자: 다른 캐릭터 객체로부터 깊은 복사를 수행
 Character::Character(Character const &src) {
     this->name = src.name;
     for (int i = 0; i < 4; i++) {
@@ -41,7 +40,6 @@ Character::Character(Character const &src) {
     }
 }
 
-// 복사 할당 연산자: 다른 캐릭터 객체의 상태를 현재 객체에 할당
 /* During copy, the Materias of a Character must be deleted 
 before the new ones are added to their inventory. */
 Character& Character::operator=(Character const &rhs) {
@@ -63,15 +61,12 @@ Character& Character::operator=(Character const &rhs) {
     return *this;
 }
 
-// 소멸자: 할당된 모든 Materia 삭제
 Character::~Character() {
     for (int i = 0; i < 4; i++) {
         delete inventory[i]; 
     }
 }
 
-// 아래 가상함수 
-// 캐릭터의 이름 반환
 std::string const &Character::getName() const {
     return name;
 }
@@ -94,22 +89,7 @@ void Character::equip(AMateria* m)
 
 	std::cout << "Inventory is full." << std::endl;
 }
-// void Character::equip(AMateria *m) {
-//     for (int i = 0; i < 4; i++) {
-//         if (!inventory[i]) { // 빈 슬롯이라면 Materia 추가
-//             inventory[i] = m;
-//             break;
-//         }
-//     }
-// }
 
-/* 목적: 캐릭터의 inventory 배열에서 지정된 인덱스의 Materia를 NULL로 설정하여 장착 해제. 
-단, 이 함수는 Materia 객체를 메모리에서 삭제하지 않으며, 단순히 인벤토리에서의 참조를 제거합니다.*/
-// Materia 장착 해제: 지정된 인덱스의 Materia 제거하지만 삭제하지는 않음
-// void Character::unequip(int idx) {
-//     if (idx >= 0 && idx < 4) // 유효한 인덱스라면 Materia 제거
-//         inventory[idx] = NULL;
-// }
 void Character::unequip(int idx) {
     if (idx < 0 || idx >= 4) {
         std::cout << "Invalid index" << std::endl;
@@ -143,8 +123,3 @@ void Character::use(int idx, ICharacter& target) {
         std::cout << "No Materia found" << std::endl;
     }
 }
-// void Character::use(int idx, ICharacter& target) {
-//     if (idx >= 0 && idx < 4 && inventory[idx]) { //유효한 인덱스와 Materia 존재 확인
-//         inventory[idx]->use(target); // Materia 사용
-//     }
-// }

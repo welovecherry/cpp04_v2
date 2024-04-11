@@ -22,10 +22,9 @@ Ice::~Ice() {
 }
 
 Ice* Ice::clone() const {
-    return new Ice(*this); // Ice 객체의 복사본을 생성하여 반환
+    return (new Ice(*this)); // Ice 객체의 복사본을 생성하여 반환
 }
 
-// concrete class member function
 void Ice::use(ICharacter& target) {
     std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
