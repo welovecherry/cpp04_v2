@@ -14,6 +14,7 @@ int main() {
     //atexit(leaks);
 
     std::cout << "------ Begin of the main statement ------\n" << std::endl;
+    std::cout << "------ ice & cure learn test ------" << std::endl;
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice()); 
     std::cout << std::endl;
@@ -21,7 +22,7 @@ int main() {
     src->learnMateria(new Cure());
     std::cout << std::endl;
 
-    // ice & cure equip test
+    std::cout << "------ ice & cure equip test ------" << std::endl;
     ICharacter* me = new Character("me");
     AMateria* tmp;
     tmp = src->createMateria("ice");
@@ -32,19 +33,20 @@ int main() {
     me->equip(tmp);
     std::cout << std::endl;
 
-    // test use()
+    std::cout << "------ use() test ------" << std::endl;
     ICharacter* bob = new Character("bob"); 
     me->use(0, *bob);
     std::cout << std::endl;
     me->use(1, *bob);
     std::cout << std::endl;
 
-    // unequip test
+    std::cout << "------ unequip() test ------" << std::endl;
     me->unequip(0);
     std::cout << std::endl;
     me->unequip(1);
     std::cout << std::endl;
 
+    std::cout << "------ delete test ------" << std::endl;
     delete bob; 
     delete me; 
     delete src;

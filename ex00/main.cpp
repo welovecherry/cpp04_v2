@@ -5,12 +5,12 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-// void leaks(void) {
-//     system("leaks ex00");
-// }
+ void leaks(void) {
+     system("leaks ex00");
+ }
 
 int main(void) {
-    // atexit(leaks);
+     atexit(leaks);
     std::cout << "------ Begin of the main statement ------\n" << std::endl;
 
     const Animal* meta = new Animal();

@@ -2,10 +2,11 @@
 #define MATERIASOURCE_HPP
 
 #include "IMateriaSource.hpp"
+#define MAX_SLOT 4
 
 class MateriaSource : public IMateriaSource {
 private:
-    AMateria* slots[4];
+    AMateria* slots[MAX_SLOT];
 
 public:
     MateriaSource();

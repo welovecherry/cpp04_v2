@@ -10,10 +10,10 @@ public:
     Ice();
     Ice(Ice const &src);
     Ice &operator=(Ice const &rhs);
-    virtual ~Ice();
+    ~Ice();
 
-    virtual Ice* clone() const;
-    virtual void use(ICharacter& target);
+    Ice* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

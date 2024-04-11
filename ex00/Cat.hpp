@@ -8,9 +8,9 @@ public:
     Cat();
     Cat(const Cat& src);
     Cat& operator=(const Cat& rhs);
-    virtual ~Cat();
+    ~Cat();
 
-    virtual void makeSound() const; // 가상함수 오버라이딩
+    void makeSound() const;
 };
 
 #endif

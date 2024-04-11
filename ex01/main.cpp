@@ -6,12 +6,12 @@
 
 #include <iostream>
 
-// void leaks(void) {
-//     system("leaks ex01");
-// }
+ void leaks(void) {
+     system("leaks ex01");
+ }
 
 int main() {
-    // atexit(leaks);
+     atexit(leaks);
     std::cout << "------ Begin of the main statement ------\n" << std::endl;
     int size = 6;
     Animal *animals[size];
