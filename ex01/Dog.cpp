@@ -1,6 +1,8 @@
 #include "Dog.hpp"
 #include <iostream>
 
+// A copy of a Dog or a Cat mustn’t be shallow.
+
 Dog::Dog() : Animal(), brain(new Brain()) {
     std::cout << "🐶Dog constructor called." << std::endl;
 }
@@ -24,7 +26,6 @@ Dog::~Dog() {
     std::cout << "🐶Dog destructor called." << std::endl;
 }
 
-// makeSound 함수 오버라이딩
 void Dog::makeSound() const {
     std::cout << "🐶Dog: Bow Wow" << std::endl;
 }

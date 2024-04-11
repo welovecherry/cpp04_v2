@@ -1,6 +1,7 @@
 #include "Cat.hpp"
 #include <iostream>
 
+//A copy of a Dog or a Cat mustn’t be shallow.
 
 Cat::Cat() : Animal(), brain(new Brain()) {
     std::cout << "😺Cat constructor called." << std::endl;

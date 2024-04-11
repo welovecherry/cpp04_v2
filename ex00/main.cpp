@@ -3,11 +3,7 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
 #include <iostream>
-
-/*Dog와 Cat 클래스는 각각 Animal 클래스로부터 상속받아 makeSound() 함수를 오버라이딩(재정의)합니다. 
-따라서, 각각의 객체는 자신에게 해당하는 소리를 출력합니다.*/
 
 // void leaks(void) {
 //     system("leaks ex00");

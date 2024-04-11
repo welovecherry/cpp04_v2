@@ -7,8 +7,6 @@ WrongCat::WrongCat() : WrongAnimal() {
 }
 
 WrongCat::WrongCat(const WrongCat& src) : WrongAnimal(src) {
-    // 이 줄은 필요 없으며, WrongAnimal(src) 호출로 충분합니다.
-    // this->type = src.type;
     std::cout << "WrongCat copy constructor called." << std::endl;
 }
 
@@ -22,4 +20,9 @@ WrongCat& WrongCat::operator=(const WrongCat& rhs) {
 
 WrongCat::~WrongCat() {
     std::cout << "WrongCat destructor called." << std::endl;
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "🐱WrongCat: wrong Meow Meow" << std::endl;
 }

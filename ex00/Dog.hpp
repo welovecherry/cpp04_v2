@@ -10,7 +10,7 @@ public:
     Dog& operator=(const Dog& rhs);
     virtual ~Dog();
 
-    virtual void makeSound() const; // 가상 함수 오버라이딩
+    virtual void makeSound() const;
 };
 
 #endif

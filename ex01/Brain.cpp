@@ -25,9 +25,9 @@ Brain::~Brain() {
 }
 
 std::string Brain::getIdea(int idx) const {
-        return ideas[idx];
+    return ideas[idx];
 }
 
 void Brain::setIdea(int idx, const std::string& idea) {
-        ideas[idx] = idea;
+    ideas[idx] = idea;
 }

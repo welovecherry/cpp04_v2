@@ -22,7 +22,7 @@ Ice::~Ice() {
 }
 
 Ice* Ice::clone() const {
-    return (new Ice(*this)); // Ice 객체의 복사본을 생성하여 반환
+    return (new Ice(*this));
 }
 
 void Ice::use(ICharacter& target) {

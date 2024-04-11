@@ -4,6 +4,8 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
+// Dog and Cat will have a private Brain* attribute.
+
 class Cat : public Animal {
 private:
     Brain *brain;

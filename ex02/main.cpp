@@ -3,9 +3,7 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
 #include <iostream>
-
 
 // void leaks(void) {
 //     system("leaks ex02");
